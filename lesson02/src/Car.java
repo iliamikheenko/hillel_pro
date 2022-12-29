@@ -1,3 +1,5 @@
+package hillel_pro.lesson02.src;
+
 public class Car {
     public void start(){
         startElectricity();

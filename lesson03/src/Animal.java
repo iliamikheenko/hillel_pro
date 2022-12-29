@@ -1,3 +1,5 @@
+package hillel_pro.lesson03.src;
+
 public abstract class Animal {
     private String name;
     private static int amountOfAnimals;

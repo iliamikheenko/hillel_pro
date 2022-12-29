@@ -1,3 +1,5 @@
+package hillel_pro.lesson03.src;
+
 public class Dog extends Animal{
     private static int amountOfDogs;
     public Dog(String name) {
