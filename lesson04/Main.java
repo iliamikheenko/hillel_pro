@@ -21,7 +21,7 @@ public class Main {
         return new ArrayList<>(List.of(array));
     }
 
-    //Return new ArrayList, order of elements can differ
+    //return new ArrayList, order of elements can differ
     //also possible to use loop, new empty List and contains method to save order
     public static ArrayList<Integer> findUnique(ArrayList<Integer> numbers){
         HashSet<Integer> setUniqueInt = new HashSet<>(numbers);
@@ -42,7 +42,7 @@ public class Main {
         }
     }
 
-    //In fact the same decision as calcOccurrence method, but we return HashMap
+    //In fact the same decision as calcOccurrence method, but it returns HashMap
     public static HashMap<String,Integer> findOccurrence(List<String> listOfString){
         HashMap<String,Integer> mapOfOccurrence = new HashMap<>();
         for (String s: listOfString) {
