@@ -3,7 +3,7 @@ package hillel_pro.lesson04.phonebook;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhoneBook {
+public class PhoneBook{
     private final ArrayList<Record> phoneBook = new ArrayList<>();
     public void add(String name, String number){
         if (name == null || number == null)

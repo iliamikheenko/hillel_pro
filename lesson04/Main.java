@@ -17,6 +17,7 @@ public class Main {
     public static List<?> toImmutableList(Object[] array){
         return List.of(array);
     }
+
     public static List<?> toMutableList(Object[] array){
         return new ArrayList<>(List.of(array));
     }
