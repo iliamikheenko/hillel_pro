@@ -14,11 +14,5 @@ class Record {
     public String getPhone() {
         return phone;
     }
-    @Override
-    public String toString() {
-        return "name: " + name +
-                ", phone: " + phone;
-
-    }
 }
 
