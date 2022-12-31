@@ -1,8 +1,8 @@
 package hillel_pro.lesson04.phonebook;
 
 class Record {
-private String name;
-private String phone;
+    private final String name;
+    private final String phone;
 
     Record(String name, String phone) {
         this.name = name;
@@ -21,3 +21,4 @@ private String phone;
 
     }
 }
+

@@ -2,7 +2,7 @@ package hillel_pro.lesson04.phonebook;
 
 import java.util.ArrayList;
 public class PhoneBook {
-    private ArrayList<Record> phoneBook = new ArrayList<>();
+    private final ArrayList<Record> phoneBook = new ArrayList<>();
     public void add(String name, String number){
         if (name != null && number != null){
         phoneBook.add(new Record(name,number));
@@ -26,7 +26,6 @@ public class PhoneBook {
             }
         }
         System.out.println("name: " + name +
-                           ", phones: " + allNumbers.toString());
+                           ", phones: " + allNumbers);
     }
-
 }
