@@ -6,11 +6,9 @@ import java.util.List;
 public class PhoneBook {
     private final ArrayList<Record> phoneBook = new ArrayList<>();
     public void add(String name, String number){
-        if (name != null && number != null){
+        if (name == null || number == null)
+            throw new IllegalArgumentException("name and number can't be null");
         phoneBook.add(new Record(name,number));
-        }else{
-            System.out.println("IllegalArguments");
-        }
     }
     public Record find(String name){
         for (Record record : phoneBook) {

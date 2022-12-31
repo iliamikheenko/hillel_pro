@@ -14,7 +14,6 @@ public class Main {
         return count;
     }
 
-
     public static List<?> toImmutableList(Object[] array){
         return List.of(array);
     }
