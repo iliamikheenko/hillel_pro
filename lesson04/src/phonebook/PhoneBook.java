@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PhoneBook {
     private final ArrayList<Record> phoneBook = new ArrayList<>();
-    public void add(String name, String number){
+    public void add(String name, String number) throws IllegalArgumentException{
         if (name == null || number == null)
             throw new IllegalArgumentException("name and number can't be null");
         phoneBook.add(new Record(name,number));
