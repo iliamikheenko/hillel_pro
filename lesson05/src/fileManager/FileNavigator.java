@@ -1,4 +1,4 @@
-package src;
+package src.fileManager;
 
 import java.util.*;
 
@@ -9,11 +9,11 @@ public class FileNavigator {
         if (filePath == null || fileData == null)
             throw new IllegalArgumentException("File path and file can't be null.");
         if (!filePath.equals(fileData.getFilePath())){
-            throw new IllegalArgumentException(fileData.getFileName()+" can't be added. Please check paths.");
+            throw new IllegalArgumentException("File can't be added. Please check paths.");
         }
         if (fileMap.containsKey(filePath)){
             fileMap.get(filePath).add(fileData);
-        } else{
+        } else {
             fileMap.put(filePath, new ArrayList<>(List.of(fileData)));
         }
     }
@@ -46,6 +46,8 @@ public class FileNavigator {
 
     @Override
     public String toString() {
-        return fileMap.toString();
+        return "FileNavigator{" +
+                "fileMap=" + fileMap +
+                '}';
     }
 }

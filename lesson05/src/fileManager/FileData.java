@@ -1,4 +1,4 @@
-package src;
+package src.fileManager;
 
 public final class FileData implements Comparable<FileData>  {
     private final String fileName;
@@ -22,21 +22,17 @@ public final class FileData implements Comparable<FileData>  {
         return filePath;
     }
 
-    public String getFileName() {
-        return fileName;
+    @Override
+    public int compareTo(FileData o) {
+        return this.fileSize-o.fileSize;
     }
 
     @Override
     public String toString() {
-        return "{" +
-                fileName +
-                ", " + fileSize +
-                ", " + filePath +
-                "}";
-    }
-
-    @Override
-    public int compareTo(FileData o) {
-        return this.fileSize-o.fileSize;
+        return "FileData{" +
+                "fileName='" + fileName + '\'' +
+                ", fileSize=" + fileSize +
+                ", filePath='" + filePath + '\'' +
+                '}';
     }
 }
