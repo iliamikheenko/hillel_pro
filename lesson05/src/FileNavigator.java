@@ -19,8 +19,7 @@ public class FileNavigator {
     }
 
     public List<FileData> find(String filePath){
-        if (fileMap.get(filePath) == null) return new ArrayList<>();
-        return fileMap.get(filePath);
+        return fileMap.getOrDefault(filePath, new ArrayList<>());
     }
 
     public List<FileData> filterBySize(int fileSize){

@@ -1,6 +1,6 @@
 package src;
 
-public class FileData implements Comparable<FileData>  {
+public final class FileData implements Comparable<FileData>  {
     private final String fileName;
     private final int fileSize;
     private final String filePath;
