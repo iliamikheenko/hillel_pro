@@ -6,9 +6,6 @@ public final class FileData implements Comparable<FileData>  {
     private final String filePath;
 
     public FileData(String fileName, int fileSize, String filePath) {
-        if (fileName == null) throw new IllegalArgumentException("File name can't be null");
-        if (filePath == null) throw new IllegalArgumentException("File path can't be null");
-        if (fileSize <= 0) throw new IllegalArgumentException("File size must be more than 0.");
         this.fileName = fileName;
         this.fileSize = fileSize;
         this.filePath = filePath;
