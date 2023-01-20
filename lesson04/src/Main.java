@@ -14,10 +14,10 @@ public class Main {
         return count;
     }
 
-    public static List<?> toImmutableList(Object[] array){
+    public static <T> List<T> toImmutableList(T[] array){
         return List.of(array);
     }
-    public static List<?> toMutableList(Object[] array){
+    public static <T> List<T> toMutableList(T[] array){
         return new ArrayList<>(List.of(array));
     }
 
