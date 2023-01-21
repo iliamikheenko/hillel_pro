@@ -14,11 +14,12 @@ public class Main {
         return count;
     }
 
-    public static <T> List<T> toImmutableList(T[] array){
-        return List.of(array);
-    }
-    public static <T> List<T> toMutableList(T[] array){
-        return new ArrayList<>(List.of(array));
+    public static List<Integer> toList(int[] array){
+        List<Integer> resultList = new ArrayList<>();
+        for (Integer number:array) {
+            resultList.add(number);
+        }
+        return resultList;
     }
 
     //return new ArrayList, order of elements can differ
