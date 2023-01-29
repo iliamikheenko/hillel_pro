@@ -1,6 +1,9 @@
 package src;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
+
 public class Product implements Comparable<Product>{
     private final int id;
     private final String type;
@@ -8,12 +11,12 @@ public class Product implements Comparable<Product>{
     private final boolean isDiscountable;
     private final LocalDate dateOfAdding;
 
-    public Product(int id, String type, double price, boolean isDiscountable, LocalDate dateOfAdding) {
+    public Product(int id, String type, double price, boolean isDiscountable, LocalDate date) {
         this.id = id;
         this.type = type;
-        this.price = price;
+        this.setPrice(price);
         this.isDiscountable = isDiscountable;
-        this.dateOfAdding = dateOfAdding;
+        this.dateOfAdding = date;
     }
 
     public int getId() {
@@ -22,6 +25,11 @@ public class Product implements Comparable<Product>{
 
     public String getType() {
         return type;
+    }
+
+    public void setPrice(double price) {
+        BigDecimal bd = new BigDecimal(price).setScale(1, RoundingMode.HALF_UP);
+        this.price = bd.doubleValue();
     }
 
     public double getPrice() {
@@ -36,7 +44,13 @@ public class Product implements Comparable<Product>{
         return dateOfAdding;
     }
     public void setDiscount10(){
-        this.price = this.price * 0.9;
+        setPrice(this.price*0.9);
+
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        return Double.compare(this.price,o.price);
     }
 
     @Override
@@ -44,14 +58,9 @@ public class Product implements Comparable<Product>{
         return "Product{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
-                ", price=" + String.format("%.2f",price) +
+                ", price=" + price +
                 ", isDiscountable=" + isDiscountable +
                 ", dateOfAdding=" + dateOfAdding +
                 "}\n";
-    }
-
-    @Override
-    public int compareTo(Product o) {
-        return Double.compare(this.price,o.price);
     }
 }
