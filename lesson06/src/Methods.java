@@ -1,5 +1,6 @@
 package src;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -36,7 +37,7 @@ public class Methods {
     public static List<Product> getSpecificProducts(List<Product> products){
         return products.stream()
                 .filter(s ->"Book".equals(s.getType()))
-                .filter(s -> s.getDateOfAdding().getYear() == 2023)
+                .filter(s -> s.getDateOfAdding().getYear() == LocalDate.now().getYear())
                 .filter(s -> s.getPrice() <= 75)
                 .toList();
     }

@@ -1,14 +1,12 @@
 package src;
 
-import java.text.DecimalFormat;
 import java.time.LocalDate;
-
 public class Product implements Comparable<Product>{
-    private int id;
-    private String type;
+    private final int id;
+    private final String type;
     private double price;
-    private boolean isDiscountable;
-    private LocalDate dateOfAdding;
+    private final boolean isDiscountable;
+    private final LocalDate dateOfAdding;
 
     public Product(int id, String type, double price, boolean isDiscountable, LocalDate dateOfAdding) {
         this.id = id;
@@ -46,7 +44,7 @@ public class Product implements Comparable<Product>{
         return "Product{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
-                ", price=" + price +
+                ", price=" + String.format("%.2f",price) +
                 ", isDiscountable=" + isDiscountable +
                 ", dateOfAdding=" + dateOfAdding +
                 "}\n";

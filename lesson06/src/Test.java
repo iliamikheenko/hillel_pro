@@ -24,12 +24,12 @@ public class Test {
         products.add(new Product(13, "Book", 49.9, true, LocalDate.of(2023,1,1)));
         products.add(new Product(14, "Phone", 49.9, true, LocalDate.of(2023,1,1)));
 
-        System.out.println(getBooksPriceMore250(products));
+//        System.out.println(getBooksPriceMore250(products));
         System.out.println(getDiscountableBooks(products));
-        System.out.println(getCheapestBook(products));
-        System.out.println(getThreeLastAddedProducts(products));
-        System.out.println(getSpecificProducts(products));
-        System.out.println(getGroupedByTypeProducts(products));
+//        System.out.println(getCheapestBook(products));
+//        System.out.println(getThreeLastAddedProducts(products));
+//        System.out.println(getSpecificProducts(products));
+//        System.out.println(getGroupedByTypeProducts(products));
     }
 
 }
