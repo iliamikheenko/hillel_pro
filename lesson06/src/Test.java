@@ -28,7 +28,7 @@ public class Test {
         System.out.println(getDiscountableBooks(products));
         System.out.println(getCheapestBook(products));
         System.out.println(getThreeLastAddedProducts(products));
-        System.out.println(getSomeProducts(products));
+        System.out.println(getSpecificProducts(products));
         System.out.println(getGroupedByTypeProducts(products));
     }
 
