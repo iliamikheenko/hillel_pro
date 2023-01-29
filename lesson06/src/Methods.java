@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 import java.time.LocalDate;
 
 public class Methods {
-
     public static List<Product> getBooksPriceMore250 (List<Product> products){
         return products.stream()
                 .filter(s -> "Book".equals(s.getType()))
