@@ -7,7 +7,7 @@ public class StatisticApp {
     public static void main(String[] args) {
         String bookTitle;
 
-        System.out.println("Enter book title:");
+        System.out.print("Enter book title: ");
 
         try (Scanner scanner = new Scanner(System.in)){
              bookTitle = scanner.nextLine();
