@@ -22,8 +22,8 @@ public class StatisticApp {
             return;
         }
 
-        StatisticReader stReader = new StatisticReader();
-        stReader.textToWordCounter(book);
+        StatisticReader stReader = new StatisticReader(book);
+
         String output =
                 "Ten most popular words that have more than 2 characters: " + stReader.getTenWords() + "\n" +
                 "Total number of words: " + stReader.countWords() + "\n" +

@@ -12,7 +12,10 @@ import java.util.regex.Pattern;
 
 public class StatisticReader {
     private final Map<String,Integer> wordCounter = new HashMap<>();
-    public void textToWordCounter(File book){
+    public StatisticReader(File book) {
+        this.textToWordCounter(book);
+    }
+    private void textToWordCounter(File book){
         try (BufferedReader bookBR = new BufferedReader(new FileReader(book))){
             String line;
             Pattern pattern = Pattern.compile("[^a-zA-Z']");
@@ -31,6 +34,7 @@ public class StatisticReader {
     public int countUniqueWords(){
         return wordCounter.keySet().size();
     }
+
     public int countWords(){
         return wordCounter.values().stream()
                 .mapToInt(s -> s)
