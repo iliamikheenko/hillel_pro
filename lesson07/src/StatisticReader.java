@@ -12,22 +12,23 @@ import java.util.regex.Pattern;
 
 public class StatisticReader {
     private final Map<String,Integer> wordCounter = new HashMap<>();
+    private final Pattern PATTERN_WORD = Pattern.compile("[^a-zA-Z']");
+
     public StatisticReader(File book) {
         this.textToWordCounter(book);
     }
     private void textToWordCounter(File book){
-        try (BufferedReader bookBR = new BufferedReader(new FileReader(book))){
+        try (BufferedReader inputFile = new BufferedReader(new FileReader(book))){
             String line;
-            Pattern pattern = Pattern.compile("[^a-zA-Z']");
-            while ((line = bookBR.readLine()) != null){
-                String[] words = pattern.split(line.trim().replaceAll("\\s+"," "));
+            while ((line = inputFile.readLine()) != null){
+                String[] words = PATTERN_WORD.split(line.trim().replaceAll("\\s+"," "));
                 for (String word : words) {
                     word = word.toLowerCase();
                     wordCounter.put(word,wordCounter.getOrDefault(word,0)+1);
                 }
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Failed reading the file with text. Try again.");
         }
     }
 
@@ -37,8 +38,8 @@ public class StatisticReader {
 
     public int countWords(){
         return wordCounter.values().stream()
-                .mapToInt(s -> s)
-                .sum();
+                .reduce(Integer::sum)
+                .orElse(0);
     }
 
     public List<String> getTenWords(){
