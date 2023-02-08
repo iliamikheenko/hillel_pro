@@ -9,11 +9,9 @@ public class StatisticApp {
 
         System.out.print("Enter book title: ");
 
-        try (Scanner scanner = new Scanner(System.in)){
-             bookTitle = scanner.nextLine();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        Scanner scanner = new Scanner(System.in);
+        bookTitle = scanner.nextLine();
+        scanner.close();
 
         File book = new File("lesson07/src/book/" + bookTitle + ".txt");
 
@@ -24,12 +22,12 @@ public class StatisticApp {
 
         StatisticReader stReader = new StatisticReader(book);
 
-        String output =
+        String statisticTemplate =
                 "Ten most popular words that have more than 2 characters: " + stReader.getTenWords() + "\n" +
                 "Total number of words: " + stReader.countWords() + "\n" +
                 "Total number of unique words: " + stReader.countUniqueWords();
 
-        System.out.println(output);
-        StatisticWriter.writeToFile(output,bookTitle);
+        System.out.println(statisticTemplate);
+        StatisticWriter.writeToFile(statisticTemplate, bookTitle);
     }
 }
