@@ -11,7 +11,7 @@ public class StatisticWriter {
             outputFile.write(text);
             outputFile.flush();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Failed writing a new file with statistic. Try again.");
         }
     }
 }
