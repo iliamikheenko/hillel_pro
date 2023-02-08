@@ -1,0 +1,3 @@
+Ten most popular words that have more than 2 characters: [dad:4, mum:3, was:3, the:3, down:2, away:2, truck:2, with:2, eyed:2, but:1]
+Total number of words: 127
+Total number of unique words: 88
