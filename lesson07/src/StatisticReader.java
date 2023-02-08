@@ -18,9 +18,9 @@ public class StatisticReader {
         this.textToWordCounter(book);
     }
     private void textToWordCounter(File book){
-        try (BufferedReader inputeFile = new BufferedReader(new FileReader(book))){
+        try (BufferedReader inputFile = new BufferedReader(new FileReader(book))){
             String line;
-            while ((line = inputeFile.readLine()) != null){
+            while ((line = inputFile.readLine()) != null){
                 String[] words = PATTERN_WORD.split(line.trim().replaceAll("\\s+"," "));
                 for (String word : words) {
                     word = word.toLowerCase();
