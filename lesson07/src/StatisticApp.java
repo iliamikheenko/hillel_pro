@@ -1,6 +1,7 @@
 package src;
 
 import java.io.File;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 public class StatisticApp {
@@ -12,6 +13,7 @@ public class StatisticApp {
         Scanner scanner = new Scanner(System.in);
         bookTitle = scanner.nextLine();
         scanner.close();
+        Path textToRead = Path.of("lesson07/src/book/" + bookTitle + ".txt");
 
         File book = new File("lesson07/src/book/" + bookTitle + ".txt");
 
@@ -20,8 +22,8 @@ public class StatisticApp {
             return;
         }
 
-        StatisticReader stReader = new StatisticReader(book);
-
+//        StatisticReader stReader = new StatisticReader(book);
+        StatisticReader stReader = new StatisticReader(textToRead);
         String statisticTemplate =
                 "Ten most popular words that have more than 2 characters: " + stReader.getTenWords() + "\n" +
                         "Total number of words: " + stReader.countWords() + "\n" +
