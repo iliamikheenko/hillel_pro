@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 public class SocketServerRunner {
     public static void main(String[] args) {
         try (var serverSocket = new ServerSocket(8081);
-             var socket = serverSocket.accept();
-             var response = new DataOutputStream(socket.getOutputStream());
-             var request = new DataInputStream(socket.getInputStream())) {
+             var accept = serverSocket.accept();
+             var response = new DataOutputStream(accept.getOutputStream());
+             var request = new DataInputStream(accept.getInputStream())) {
             if (!Pattern.matches(".*[ёъыэЁЪЫЭ].*",request.readUTF())){
                 new AnswerLocalTime(response).answer();
             } else {
@@ -21,7 +21,7 @@ public class SocketServerRunner {
                 if ("хлiб".equals(request.readUTF())){
                     new AnswerLocalTime(response).answer();
                 } else {
-                    socket.close();
+                    accept.close();
                 }
             }
         } catch (IOException e) {
