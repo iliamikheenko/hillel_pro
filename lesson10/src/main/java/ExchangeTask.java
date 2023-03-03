@@ -1,4 +1,6 @@
-public class BuyAndSellTask {
+package main.java;
+
+public class ExchangeTask {
         public int maxProfit(int[] prices) {
             int result = 0;
             int firstInt = Integer.MAX_VALUE;
