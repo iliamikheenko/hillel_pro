@@ -30,4 +30,18 @@ public class BuyAndSellTaskTest {
         int result = buySell.maxProfit(prices);
         assertEquals(expected,result);
     }
+    @Test
+    public void maxProfit_WithOnePrice_Test() {
+        int[] prices = new int[]{1};
+        int expected = 0;
+        int result = buySell.maxProfit(prices);
+        assertEquals(expected,result);
+    }
+    @Test
+    public void maxProfit_WithSamePrice_Test() {
+        int[] prices = new int[]{7,7,7,7,7,7,7};
+        int expected = 0;
+        int result = buySell.maxProfit(prices);
+        assertEquals(expected,result);
+    }
 }
