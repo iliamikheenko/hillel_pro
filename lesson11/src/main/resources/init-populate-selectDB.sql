@@ -24,6 +24,6 @@ VALUES ('USD', 100.50, 1, '2023-01-02'),
        ('USD', 250.20, 3, '2022-03-11'),
        ('GBP', 50.75, 4, '2022-04-05'),
        ('EUR', 500.00, 5, '1870-05-21');
-select u.name, u.surname,w.currency,w.amount
+select u.name, u.surname, w.currency, w.amount
 from users u
 join wallet w on u.user_id=w.user_id;
